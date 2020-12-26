@@ -15,8 +15,8 @@ public abstract class AbstractTest {
    WebApplicationContext webApplicationContext;
 
    protected void setUp() {
-      if(mvc == null){
-      mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+      if (mvc == null) {
+         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
       }
    }
 }

@@ -26,9 +26,9 @@ public class UrlCheckController {
             HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
-            if(connection.getResponseCode()>=400){
+            if (connection.getResponseCode() >= 400) {
                 returnMessage = SITE_IS_DOWN;
-            }else{
+            } else {
                 returnMessage = SITE_IS_UP;
             }
         } catch (MalformedURLException e) {
@@ -36,7 +36,6 @@ public class UrlCheckController {
         } catch (IOException e) {
             returnMessage = SITE_IS_DOWN;
         }
-
 
         return returnMessage;
     }

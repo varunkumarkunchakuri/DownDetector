@@ -23,10 +23,13 @@ public class UrlCheckControllerTests extends AbstractTest {
     }
 
     @ParameterizedTest
-    @CsvSource(value = { "https://www.google.com,Site is up!", 
+    @CsvSource(value = 
+    { 
+    "https://www.google.com,Site is up!", 
     "https://www.varun.com,Site is down!",
     "randomstring,Not a valid URL",
-",Not a valid URL"})
+    ",Not a valid URL"
+    })
     public void getUrlStatusMessage(String url, String result) throws Exception {
         String uri = "/check?url=" + url;
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaType.APPLICATION_JSON_VALUE))
